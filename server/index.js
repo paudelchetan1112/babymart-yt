@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import { errorHandler } from "./middleware/errorMiddleware.js";
 import cors from "cors";
 import connectDB from "./config/db.js";
+<<<<<<< HEAD
 import swaggerUi from "swagger-ui-express"
 import {specs} from "./config/swagger.js"
 import productRoutes from "./routes/productRoutes.js"
@@ -12,12 +13,34 @@ import brandRoutes from "./routes/brandRoute.js"
 //Routes Import
 import authRoutes from "./routes/authRoutes.js"
 import userRoutes from  "./routes/userRoutes.js"
+=======
+import swaggerUi from "swagger-ui-express";
+import { specs } from "./config/swagger.js";
+
+// Routes Import
+import authRoutes from "./routes/authRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
+import productRoutes from "./routes/productRoutes.js";
+import categoryRoutes from "./routes/categoryRoutes.js";
+import brandRoutes from "./routes/brandRoutes.js";
+import bannerRoutes from "./routes/bannerRoutes.js";
+import statsRoutes from "./routes/statsRoutes.js";
+import orderRoutes from "./routes/orderRoutes.js";
+import wishlistRoutes from "./routes/wishlistRoutes.js";
+import cartRoutes from "./routes/cartRoutes.js";
+import analyticsRoutes from "./routes/analyticsRoutes.js";
+import paymentRoutes from "./routes/paymentRoutes.js";
+>>>>>>> 87d58c25cc1dca63f662984feeca7413993234e6
 
 // Load env vars
 dotenv.config();
 
 // Connect to database
 connectDB();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 87d58c25cc1dca63f662984feeca7413993234e6
 const app = express();
 
 // Enhanced CORS configuration
@@ -65,6 +88,7 @@ app.use(express.urlencoded({ limit: "10mb", extended: true }));
 // Debug middleware for order routes
 
 // Routes
+<<<<<<< HEAD
 app.use("/api/auth",authRoutes)
 app.use("/api/users", userRoutes)
 app.use("/api/categories",categoryRoutes)
@@ -82,6 +106,35 @@ app.get("/", (req, res) => {
  res.send({message:"server is saying Hello"})
 
 
+=======
+app.use("/api/auth", authRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/categories", categoryRoutes);
+app.use("/api/brands", brandRoutes);
+app.use("/api/products", productRoutes);
+app.use("/api/banners", bannerRoutes);
+app.use("/api/stats", statsRoutes);
+app.use("/api/orders", orderRoutes);
+app.use("/api/wishlist", wishlistRoutes);
+app.use("/api/cart", cartRoutes);
+app.use("/api/analytics", analyticsRoutes);
+app.use("/api/payment", paymentRoutes);
+
+// API Documentation
+app.use(
+  "/api/docs",
+  swaggerUi.serve,
+  swaggerUi.setup(specs, {
+    explorer: true,
+    customCss: ".swagger-ui .topbar { display: none }",
+    customSiteTitle: "BabyMart API Documentation",
+  })
+);
+
+// Home route
+app.get("/", (req, res) => {
+  res.send({ message: "Server is saying Hello" });
+>>>>>>> 87d58c25cc1dca63f662984feeca7413993234e6
 });
 
 // Health check endpoint
@@ -100,7 +153,11 @@ app.use(errorHandler);
 // Start server
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
+<<<<<<< HEAD
   console.log(`🚀 BabyMart API Server is running!`);
 
  
+=======
+  console.log(`API Server is running!`);
+>>>>>>> 87d58c25cc1dca63f662984feeca7413993234e6
 });
