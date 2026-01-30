@@ -1,24 +1,3 @@
-<<<<<<< HEAD
-import mongoose from "mongoose"
-const categorySchema=new mongoose.Schema({
-    name:{
-        type:String, 
-        required:true, 
-        unique:true, 
-    }, 
-    image:{
-        type:String, 
-        required:false, 
-    }, 
-    categoryType:{
-        type:String, 
-        required:true,
-        enum:["Featured", "Hot Categories", "Top Categories"]
-    }
-},{timestamps:true,})
-
-export default mongoose.models.Category||mongoose.model("Category", categorySchema)
-=======
 import mongoose from "mongoose";
 
 const categorySchema = mongoose.Schema(
@@ -46,4 +25,4 @@ const categorySchema = mongoose.Schema(
 const Category = mongoose.model("Category", categorySchema);
 
 export default Category;
->>>>>>> 87d58c25cc1dca63f662984feeca7413993234e6
+

@@ -1,6 +1,6 @@
 import asyncHandler from "express-async-handler";
 import Product from "../models/productModel.js";
-// import cloudinary from "../config/cloudinary.js";
+import cloudinary from "../config/cloudinary.js";
 
 // createProduct
 

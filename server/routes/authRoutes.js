@@ -1,28 +1,3 @@
-<<<<<<< HEAD
-import express from "express"
-import { getUserProfile, registerUser } from "../controller/authController.js";
-import { loginUser, logoutUser } from "../controller/authController.js";
-import { protect } from "../middleware/authMiddleware.js";
-const router=express.Router();
-//login route
-router.post("/login", loginUser)
-//register route
-router.post("/register", registerUser)
-
- //profile
-router.get("/profile", protect, getUserProfile)
-
-
- //logout
- router.post("/logout", protect, logoutUser)
-
-
-// router.get("/login", (req, res)=>{
-// res.send("login is working")
-// })
-export default router;
-
-=======
 import express from "express";
 import {
   getUserProfile,
@@ -95,4 +70,3 @@ router.post("/logout", protect, logoutUser);
 // });
 
 export default router;
->>>>>>> 87d58c25cc1dca63f662984feeca7413993234e6
